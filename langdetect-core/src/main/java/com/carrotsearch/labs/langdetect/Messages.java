@@ -9,12 +9,12 @@ import java.util.ResourceBundle;
  * @author Nakatani Shuyo
  */
 public class Messages {
-    private static final String BUNDLE_NAME = "com.cybozu.labs.langdetect.util.messages"; //$NON-NLS-1$
+    private static final String BUNDLE_NAME = 
+        Messages.class.getPackage().getName() + ".messages";
 
     private static final ResourceBundle RESOURCE_BUNDLE = ResourceBundle.getBundle(BUNDLE_NAME);
 
-    private Messages() {
-    }
+    private Messages() {}
 
     public static String getString(String key) {
         try {

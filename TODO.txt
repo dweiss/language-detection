@@ -1,4 +1,3 @@
-- repackage to avoid conflicts.
 - add randomized regression tests against the baseline implementation.
 - inline Messages (resource bundle) into Java code.
 - add a ProfileProvider interface and move JSON resources to default provider implementations (no need to lookup from classpath).
