@@ -11,10 +11,12 @@ import org.junit.Test;
 import com.carrotsearch.labs.langdetect.Implementation.ImplementationProxy;
 import com.carrotsearch.randomizedtesting.RandomizedContext;
 import com.carrotsearch.randomizedtesting.RandomizedTest;
+import com.carrotsearch.randomizedtesting.annotations.Seed;
 import com.carrotsearch.randomizedtesting.generators.RandomStrings;
 import com.google.common.collect.Lists;
 import com.google.common.collect.Sets;
 
+@Seed(value = "deadbeef")
 public class TestRegressionAgainstBaseline extends RandomizedTest {
   private static List<String> inputs = Lists.newArrayList();
 

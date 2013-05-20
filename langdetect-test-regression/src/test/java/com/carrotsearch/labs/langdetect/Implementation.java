@@ -68,10 +68,17 @@ public enum Implementation {
 
       case MASTER:
         return new ImplementationProxy() {
+          final Detector detector;
+          {
+            try {
+              detector = DetectorFactory.create();
+            } catch (Exception e) {
+              throw new RuntimeException();
+            }
+          }
+
           public String detectLanguage(CharSequence chs)  throws Exception {
-            Detector detector = DetectorFactory.create();
-            detector.append(chs.toString());
-            return detector.detect();
+            return detector.detect(chs);
           }
         };
     }

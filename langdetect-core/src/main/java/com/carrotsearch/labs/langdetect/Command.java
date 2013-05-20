@@ -214,7 +214,6 @@ public class Command {
                 is = new BufferedReader(new InputStreamReader(new FileInputStream(filename), "utf-8"));
 
                 Detector detector = DetectorFactory.create(getDouble("alpha", DEFAULT_ALPHA));
-                if (hasOpt("--debug")) detector.setVerbose();
                 detector.append(is);
                 System.out.println(filename + ":" + detector.getProbabilities());
             } catch (IOException e) {
