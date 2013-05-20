@@ -223,7 +223,7 @@ public class Detector {
 
         Arrays.fill(langProb, 0d);
 
-        Random rand = new Random(); // TODO: use a random without volatile/ membarrier; use constant seed
+        Random rand = new TLRandom();
         if (seed != null) rand.setSeed(seed);
         for (int t = 0; t < n_trial; ++t) {
             Arrays.fill(trialProb, 0d);

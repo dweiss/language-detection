@@ -11,6 +11,7 @@ import com.carrotsearch.junitbenchmarks.AbstractBenchmark;
 import com.carrotsearch.junitbenchmarks.BenchmarkOptions;
 import com.carrotsearch.labs.langdetect.Implementation.ImplementationProxy;
 import com.carrotsearch.randomizedtesting.generators.RandomStrings;
+import com.carrotsearch.sizeof.RamUsageEstimator;
 import com.google.common.collect.Lists;
 
 public class BenchmarkAgainstBaseline extends AbstractBenchmark {
@@ -26,6 +27,8 @@ public class BenchmarkAgainstBaseline extends AbstractBenchmark {
         inputs.add(RandomStrings.randomAsciiOfLength(r, 400));
       }
     }
+    
+    System.out.println("Input size: " + RamUsageEstimator.humanSizeOf(inputs));
   }
 
   /* Try to prevent no-side-effects on JIT. */

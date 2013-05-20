@@ -14,15 +14,15 @@ public class NGram {
     private static final String LATIN1_EXCLUDED = Messages.getString("NGram.LATIN1_EXCLUDE");
     public final static int N_GRAM = 3;
     public static HashMap<Character, Character> cjk_map; 
-    
-    private StringBuffer grams_;
+
+    private StringBuilder grams_;
     private boolean capitalword_;
 
     /**
      * Constructor.
      */
     public NGram() {
-        grams_ = new StringBuffer(" ");
+        grams_ = new StringBuilder(" ");
         capitalword_ = false;
     }
 
@@ -34,7 +34,7 @@ public class NGram {
         ch = normalize(ch);
         char lastchar = grams_.charAt(grams_.length() - 1);
         if (lastchar == ' ') {
-            grams_ = new StringBuffer(" ");
+            grams_ = new StringBuilder(" ");
             capitalword_ = false;
             if (ch==' ') return;
         } else if (grams_.length() >= N_GRAM) {
@@ -130,8 +130,8 @@ public class NGram {
             Messages.getString("NORMALIZED_VI_CHARS_0323") };
     private static final String TO_NORMALIZE_VI_CHARS = Messages.getString("TO_NORMALIZE_VI_CHARS");
     private static final String DMARK_CLASS = Messages.getString("DMARK_CLASS");
-    private static final Pattern ALPHABET_WITH_DMARK = Pattern.compile("([" + TO_NORMALIZE_VI_CHARS + "])(["
-            + DMARK_CLASS + "])");
+    private static final Pattern ALPHABET_WITH_DMARK = Pattern.compile(
+        "([" + TO_NORMALIZE_VI_CHARS + "])([" + DMARK_CLASS + "])");
     
     /**
      * CJK Kanji Normalization Mapping
