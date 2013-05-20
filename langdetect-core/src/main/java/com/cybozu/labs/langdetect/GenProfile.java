@@ -104,7 +104,6 @@ public class GenProfile {
             }
 
             System.out.println(lang + ":" + count);
-
         } catch (IOException e) {
             throw new LangDetectException(ErrorCode.CantOpenTrainData, "Can't open training database file '" + file.getName() + "'");
         } finally {

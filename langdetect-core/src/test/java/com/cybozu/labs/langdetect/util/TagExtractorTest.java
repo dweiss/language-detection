@@ -1,6 +1,3 @@
-/**
- * 
- */
 package com.cybozu.labs.langdetect.util;
 
 import static org.junit.Assert.*;
@@ -82,7 +79,7 @@ public class TagExtractorTest {
     }
 
     /**
-     * Test method for {@link com.cybozu.labs.langdetect.util.TagExtractor#closeTag(com.cybozu.labs.langdetect.util.LangProfile)}.
+     * Test method for {@link com.cybozu.labs.langdetect.util.TagExtractor#closeTag()}.
      */
     @Test
     public final void testCloseTag() {

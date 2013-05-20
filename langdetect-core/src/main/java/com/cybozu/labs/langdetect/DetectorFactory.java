@@ -93,7 +93,7 @@ public class DetectorFactory {
      * Load profiles from specified directory.
      * This method must be called once before language detection.
      *  
-     * @param profileDirectory profile directory path
+     * @param json_profiles profiles
      * @throws LangDetectException  Can't open profiles(error code = {@link ErrorCode#FileLoadError})
      *                              or profile's format is wrong (error code = {@link ErrorCode#FormatError})
      */

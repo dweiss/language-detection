@@ -163,6 +163,7 @@ public class Detector {
      * @param text the target text to append
      */
     public void append(String text) {
+        // TODO: move these to pluggable cleanup filters (or remove entirely)?
         text = URL_REGEX.matcher(text).replaceAll(" ");
         text = MAIL_REGEX.matcher(text).replaceAll(" ");
         text = NGram.normalize_vi(text);
@@ -220,6 +221,7 @@ public class Detector {
     public ArrayList<Language> getProbabilities() throws LangDetectException {
         if (langprob == null) detectBlock();
 
+        // TODO: return a reusable list (view).
         ArrayList<Language> list = sortProbability(langprob);
         return list;
     }
@@ -230,13 +232,13 @@ public class Detector {
      */
     private void detectBlock() throws LangDetectException {
         cleaningText();
-        ArrayList<String> ngrams = extractNGrams();
+        ArrayList<String> ngrams = extractNGrams(); // TODO: iterate over n-grams, don't extract them
         if (ngrams.size()==0)
             throw new LangDetectException(ErrorCode.CantDetectError, "no features in text");
         
         langprob = new double[langlist.size()];
 
-        Random rand = new Random();
+        Random rand = new Random(); // TODO: use a random without volatile/ membarrier; use constant seed
         if (seed != null) rand.setSeed(seed);
         for (int t = 0; t < n_trial; ++t) {
             double[] prob = initProbability();
@@ -331,8 +333,8 @@ public class Detector {
     }
 
     /**
-     * @param probabilities HashMap
-     * @return lanugage candidates order by probabilities descendently
+     * @param prob HashMap
+     * @return language candidates order by decreasing probabilities
      */
     private ArrayList<Language> sortProbability(double[] prob) {
         ArrayList<Language> list = new ArrayList<Language>();
@@ -351,9 +353,9 @@ public class Detector {
     }
 
     /**
-     * unicode encoding (for verbose mode)
+     * Unicode encoding (for verbose mode)
+     * 
      * @param word
-     * @return
      */
     static private String unicodeEncode(String word) {
         StringBuffer buf = new StringBuffer();
