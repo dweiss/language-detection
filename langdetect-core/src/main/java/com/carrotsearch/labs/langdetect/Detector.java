@@ -6,6 +6,7 @@ import java.lang.Character.UnicodeBlock;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Random;
 import java.util.regex.Pattern;
 
@@ -58,7 +59,6 @@ public class Detector {
     private static final double PROB_THRESHOLD = 0.1;
     private static final double CONV_THRESHOLD = 0.99999;
     private static final int BASE_FREQ = 10000;
-    private static final String UNKNOWN_LANG = "unknown";
 
     private static final Pattern URL_REGEX = Pattern.compile("https?://[-_.?&~;+=/#0-9A-Za-z]{1,2076}");
     private static final Pattern MAIL_REGEX = Pattern.compile("[-_.0-9A-Za-z]{1,64}@[-_0-9A-Za-z]{1,255}[-_.0-9A-Za-z]{1,255}");
@@ -177,9 +177,23 @@ public class Detector {
      *  code = ErrorCode.CantDetectError : Can't detect because of no valid features in text
      */
     public String detect() throws LangDetectException {
-        ArrayList<Language> probabilities = getProbabilities();
-        if (probabilities.size() > 0) return probabilities.get(0).lang;
-        return UNKNOWN_LANG;
+        detectBlock();
+
+        String language = /* Unrecognized. */ null;
+        double maxP = 0;
+        double [] langProb = this.langProb;
+        for (int i = 0; i < langProb.length; i++) {
+            final double p = langProb[i];
+            if (p > PROB_THRESHOLD) {
+                if (p > maxP) {
+                    // TODO: in case of ties we could pick the language with a larger representation (more trigrams)?
+                    maxP = p;
+                    language = langlist.get(i);
+                }
+            }
+        }
+
+        return language;
     }
 
     /**
@@ -188,11 +202,10 @@ public class Detector {
      * @throws LangDetectException 
      *  code = ErrorCode.CantDetectError : Can't detect because of no valid features in text
      */
-    public ArrayList<Language> getProbabilities() throws LangDetectException {
+    public List<Language> getProbabilities() throws LangDetectException {
         // TODO: return a reusable list (view).
         detectBlock();
-        ArrayList<Language> list = sortProbability(langProb);
-        return list;
+        return sortProbability(langProb);
     }
     
     /**
@@ -279,9 +292,9 @@ public class Detector {
 
     /**
      * @param prob HashMap
-     * @return language candidates order by decreasing probabilities
+     * @return language candidates ordered by decreasing probabilities
      */
-    private ArrayList<Language> sortProbability(double[] prob) {
+    private List<Language> sortProbability(double[] prob) {
         // TODO: this sorting is not needed for the (common) case of requiring only max. element!
         ArrayList<Language> list = new ArrayList<Language>();
         for(int j=0;j<prob.length;++j) {
