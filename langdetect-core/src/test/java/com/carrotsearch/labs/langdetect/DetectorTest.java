@@ -1,4 +1,4 @@
-package com.cybozu.labs.langdetect;
+package com.carrotsearch.labs.langdetect;
 
 import static org.junit.Assert.*;
 
@@ -9,7 +9,9 @@ import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 
-import com.cybozu.labs.langdetect.util.LangProfile;
+import com.carrotsearch.labs.langdetect.Detector;
+import com.carrotsearch.labs.langdetect.DetectorFactory;
+import com.carrotsearch.labs.langdetect.LangDetectException;
 
 /**
  * Unit test for {@link Detector} and {@link DetectorFactory}.

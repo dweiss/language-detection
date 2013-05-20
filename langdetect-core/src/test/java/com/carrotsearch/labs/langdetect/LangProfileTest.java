@@ -1,7 +1,7 @@
 /**
  * 
  */
-package com.cybozu.labs.langdetect.util;
+package com.carrotsearch.labs.langdetect;
 
 import static org.junit.Assert.*;
 
@@ -10,6 +10,7 @@ import org.junit.AfterClass;
 import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
+
 
 /**
  * @author Nakatani Shuyo
@@ -46,7 +47,7 @@ public class LangProfileTest {
     }
 
     /**
-     * Test method for {@link com.cybozu.labs.langdetect.util.LangProfile#LangProfile()}.
+     * Test method for {@link com.carrotsearch.labs.langdetect.LangProfile#LangProfile()}.
      */
     @Test
     public final void testLangProfile() {
@@ -55,7 +56,7 @@ public class LangProfileTest {
     }
 
     /**
-     * Test method for {@link com.cybozu.labs.langdetect.util.LangProfile#LangProfile(java.lang.String)}.
+     * Test method for {@link com.carrotsearch.labs.langdetect.LangProfile#LangProfile(java.lang.String)}.
      */
     @Test
     public final void testLangProfileStringInt() {
@@ -64,7 +65,7 @@ public class LangProfileTest {
     }
 
     /**
-     * Test method for {@link com.cybozu.labs.langdetect.util.LangProfile#add(java.lang.String)}.
+     * Test method for {@link com.carrotsearch.labs.langdetect.LangProfile#add(java.lang.String)}.
      */
     @Test
     public final void testAdd() {
@@ -103,7 +104,7 @@ public class LangProfileTest {
     }
     
     /**
-     * Test method for {@link com.cybozu.labs.langdetect.util.LangProfile#omitLessFreq()}.
+     * Test method for {@link com.carrotsearch.labs.langdetect.LangProfile#omitLessFreq()}.
      */
     @Test
     public final void testOmitLessFreq() {
@@ -124,7 +125,7 @@ public class LangProfileTest {
     }
 
     /**
-     * Illegal call test for {@link com.cybozu.labs.langdetect.util.LangProfile#omitLessFreq()}.
+     * Illegal call test for {@link com.carrotsearch.labs.langdetect.LangProfile#omitLessFreq()}.
      */
     @Test
     public final void testOmitLessFreqIllegally() {

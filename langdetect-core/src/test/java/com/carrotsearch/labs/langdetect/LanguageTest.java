@@ -1,13 +1,15 @@
 /**
  * 
  */
-package com.cybozu.labs.langdetect;
+package com.carrotsearch.labs.langdetect;
 
 import static org.junit.Assert.*;
 
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
+
+import com.carrotsearch.labs.langdetect.Language;
 
 /**
  * @author Nakatani Shuyo
@@ -30,7 +32,7 @@ public class LanguageTest {
     }
 
     /**
-     * Test method for {@link com.cybozu.labs.langdetect.Language#Language(java.lang.String, double)}.
+     * Test method for {@link com.carrotsearch.labs.langdetect.Language#Language(java.lang.String, double)}.
      */
     @Test
     public final void testLanguage() {

@@ -1,4 +1,4 @@
-package com.cybozu.labs.langdetect;
+package com.carrotsearch.labs.langdetect;
 
 import java.util.ArrayList;
 

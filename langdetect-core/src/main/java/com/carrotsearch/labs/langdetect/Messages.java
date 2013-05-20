@@ -1,4 +1,4 @@
-package com.cybozu.labs.langdetect.util;
+package com.carrotsearch.labs.langdetect;
 
 import java.util.MissingResourceException;
 import java.util.ResourceBundle;

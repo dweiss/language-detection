@@ -1,4 +1,4 @@
-package com.cybozu.labs.langdetect.util;
+package com.carrotsearch.labs.langdetect;
 
 import java.lang.Character.UnicodeBlock;
 import java.util.HashMap;

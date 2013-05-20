@@ -1,4 +1,4 @@
-package com.cybozu.labs.langdetect;
+package com.carrotsearch.labs.langdetect;
 
 import java.io.File;
 import java.io.FileInputStream;
@@ -11,7 +11,6 @@ import java.util.List;
 import net.arnx.jsonic.JSON;
 import net.arnx.jsonic.JSONException;
 
-import com.cybozu.labs.langdetect.util.LangProfile;
 
 /**
  * Language Detector Factory Class

@@ -1,7 +1,7 @@
 /**
  * 
  */
-package com.cybozu.labs.langdetect.util;
+package com.carrotsearch.labs.langdetect;
 
 import static org.junit.Assert.*;
 
@@ -9,6 +9,7 @@ import static org.hamcrest.CoreMatchers.is;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
+
 
 /**
  * @author Nakatani Shuyo

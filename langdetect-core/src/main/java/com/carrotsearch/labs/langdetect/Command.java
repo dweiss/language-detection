@@ -1,4 +1,4 @@
-package com.cybozu.labs.langdetect;
+package com.carrotsearch.labs.langdetect;
 
 import java.io.File;
 import java.io.BufferedReader;
@@ -11,7 +11,6 @@ import java.util.Collections;
 import java.util.HashMap;
 import java.util.HashSet;
 
-import com.cybozu.labs.langdetect.util.LangProfile;
 
 import net.arnx.jsonic.JSON;
 import net.arnx.jsonic.JSONException;

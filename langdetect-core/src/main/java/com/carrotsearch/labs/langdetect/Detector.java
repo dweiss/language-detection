@@ -1,4 +1,4 @@
-package com.cybozu.labs.langdetect;
+package com.carrotsearch.labs.langdetect;
 
 import java.io.IOException;
 import java.io.Reader;
@@ -9,7 +9,6 @@ import java.util.HashMap;
 import java.util.Random;
 import java.util.regex.Pattern;
 
-import com.cybozu.labs.langdetect.util.NGram;
 
 /**
  * {@link Detector} class is to detect language from specified text. 

@@ -1,4 +1,4 @@
-package com.cybozu.labs.langdetect;
+package com.carrotsearch.labs.langdetect;
 
 import java.io.BufferedReader;
 import java.io.File;
@@ -12,8 +12,6 @@ import javax.xml.stream.XMLInputFactory;
 import javax.xml.stream.XMLStreamException;
 import javax.xml.stream.XMLStreamReader;
 
-import com.cybozu.labs.langdetect.util.LangProfile;
-import com.cybozu.labs.langdetect.util.TagExtractor;
 
 /**
  * Load Wikipedia's abstract XML as corpus and

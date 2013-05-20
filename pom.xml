@@ -43,6 +43,7 @@
     <module>langdetect-extractor-wiki</module>
     <module>langdetect-profiles</module>
     <module>langdetect-profiles-short</module>
+    <module>langdetect-test-regression</module>
   </modules>
 
   <dependencyManagement>

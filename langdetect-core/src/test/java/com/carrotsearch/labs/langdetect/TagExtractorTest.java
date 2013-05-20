@@ -1,4 +1,4 @@
-package com.cybozu.labs.langdetect.util;
+package com.carrotsearch.labs.langdetect;
 
 import static org.junit.Assert.*;
 
@@ -7,6 +7,7 @@ import org.junit.AfterClass;
 import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
+
 
 /**
  * @author Nakatani Shuyo
@@ -43,7 +44,7 @@ public class TagExtractorTest {
     }
 
     /**
-     * Test method for {@link com.cybozu.labs.langdetect.util.TagExtractor#TagExtractor(java.lang.String, int)}.
+     * Test method for {@link com.carrotsearch.labs.langdetect.TagExtractor#TagExtractor(java.lang.String, int)}.
      */
     @Test
     public final void testTagExtractor() {
@@ -57,7 +58,7 @@ public class TagExtractorTest {
 }
 
     /**
-     * Test method for {@link com.cybozu.labs.langdetect.util.TagExtractor#setTag(java.lang.String)}.
+     * Test method for {@link com.carrotsearch.labs.langdetect.TagExtractor#setTag(java.lang.String)}.
      */
     @Test
     public final void testSetTag() {
@@ -69,7 +70,7 @@ public class TagExtractorTest {
     }
 
     /**
-     * Test method for {@link com.cybozu.labs.langdetect.util.TagExtractor#add(java.lang.String)}.
+     * Test method for {@link com.carrotsearch.labs.langdetect.TagExtractor#add(java.lang.String)}.
      */
     @Test
     public final void testAdd() {
@@ -79,7 +80,7 @@ public class TagExtractorTest {
     }
 
     /**
-     * Test method for {@link com.cybozu.labs.langdetect.util.TagExtractor#closeTag()}.
+     * Test method for {@link com.carrotsearch.labs.langdetect.TagExtractor#closeTag()}.
      */
     @Test
     public final void testCloseTag() {
@@ -121,7 +122,7 @@ public class TagExtractorTest {
     }
 
     /**
-     * Test method for {@link com.cybozu.labs.langdetect.util.TagExtractor#clear()}.
+     * Test method for {@link com.carrotsearch.labs.langdetect.TagExtractor#clear()}.
      */
     @Test
     public final void testClear() {
